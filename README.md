@@ -1,6 +1,6 @@
 # PrusaSlicer-AppImage local-docker-build 🐧
 
-Local `PrusaSlicer-AppImage` build in docker container, `uk` translation replaced with alternative `ru` translation from Dmitry Sorkin [LINK](https://k3d.tech/projects/ps_translation)
+Local `PrusaSlicer-AppImage` build in docker container, `ru` translation replaced with alternative `ru` translation from Dmitry Sorkin [LINK](https://k3d.tech/projects/ps_translation)
 
 ```bash
 ## Clone repository files, and prepare data folder for docker container

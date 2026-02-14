@@ -38,9 +38,9 @@ export LOCALE_FIX=1
 export PATH_MAPPING_HARDCODED='prusa-slicer'
 export DEPLOY_P11KIT=1
 
-## Adding Dmitry Sorkin RU alternative translation instead of UK
+## Adding Dmitry Sorkin RU alternative translation instead of original RU from PrusaSlicer.
 ## https://k3d.tech/projects/ps_translation
-cp ./PrusaSlicer.mo /usr/share/PrusaSlicer/localization/uk/
+cp ./PrusaSlicer.mo /usr/share/PrusaSlicer/localization/ru/
 
 # Deploy dependencies
 ./quick-sharun \
