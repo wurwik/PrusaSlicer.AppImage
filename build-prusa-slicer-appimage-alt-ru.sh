@@ -4,12 +4,6 @@ set -eu
 
 ARCH=$(uname -m)
 
-## Install dependencies
-
-echo "Installing package dependencies..."
-echo "---------------------------------------------------------------"
-pacman -Syu --noconfirm prusa-slicer nss-mdns base-devel wget
-
 ## Install quick-sharun and get-debloated-pkgs
 DEBLOATED="https://raw.githubusercontent.com/pkgforge-dev/Anylinux-AppImages/refs/heads/main/useful-tools/get-debloated-pkgs.sh"
 SHARUN="https://raw.githubusercontent.com/pkgforge-dev/Anylinux-AppImages/refs/heads/main/useful-tools/quick-sharun.sh"
@@ -19,6 +13,12 @@ wget "$SHARUN" -O ./quick-sharun
 
 chmod +x ./get-debloated-pkgs
 chmod +x ./quick-sharun
+
+## Install dependencies
+
+echo "Installing package dependencies..."
+echo "---------------------------------------------------------------"
+pacman -Syu --noconfirm prusa-slicer nss-mdns base-devel wget xorg-server-xvfb zsync pipewire-jack
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"

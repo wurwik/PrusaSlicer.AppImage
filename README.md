@@ -6,10 +6,16 @@ Local PrusaSlicer-AppImage build in docker container, `uk` translation replaced 
 git clone \
   --single-branch \
   --branch local-docker-build \
-  https://github.com/wurwik/PrusaSlicer.AppImage.git ~/Downloads && \
+  https://github.com/wurwik/PrusaSlicer.AppImage.git ~/Downloads/PrusaSlicer.AppImage && \
   cd ~/Downloads/PrusaSlicer.AppImage/ && \
-  mkdir ./data
-docker run --rm -it -v ./data:/app -w /app --name PrusaSlicer.AppImage ghcr.io/pkgforge-dev/archlinux:latest build-prusa-slicer-appimage-alt-ru.sh
+  mkdir ./data && cp ./build-prusa-slicer-appimage-alt-ru.sh ./PrusaSlicer.mo ./data && \
+  chmod +x ./data/build-prusa-slicer-appimage-alt-ru.sh
+
+docker run --rm -it -v ./data:/app -w /app --name PrusaSlicer.AppImage ghcr.io/pkgforge-dev/archlinux:latest ./build-prusa-slicer-appimage-alt-ru.sh
+
+
+## (optionally for debug)
+docker run --rm -it -v ./data:/app -w /app --name PrusaSlicer.AppImage ghcr.io/pkgforge-dev/archlinux:latest bash
 ```
 
 ---
