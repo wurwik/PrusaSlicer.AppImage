@@ -1,8 +1,9 @@
 # PrusaSlicer-AppImage local-docker-build 🐧
 
-Local PrusaSlicer-AppImage build in docker container, `uk` translation replaced with alternative ru translation from Dmitry Sorkin [LINK](https://k3d.tech/projects/ps_translation)
+Local `PrusaSlicer-AppImage` build in docker container, `uk` translation replaced with alternative `ru` translation from Dmitry Sorkin [LINK](https://k3d.tech/projects/ps_translation)
 
 ```bash
+## Clone repository files, and prepare data folder for docker container
 git clone \
   --single-branch \
   --branch local-docker-build \
@@ -11,12 +12,15 @@ git clone \
   mkdir ./data && cp ./build-prusa-slicer-appimage-alt-ru.sh ./PrusaSlicer.mo ./data && \
   chmod +x ./data/build-prusa-slicer-appimage-alt-ru.sh
 
+## Run PrusaSlicer.AppImage build in container
 docker run --rm -it -v ./data:/app -w /app --name PrusaSlicer.AppImage ghcr.io/pkgforge-dev/archlinux:latest ./build-prusa-slicer-appimage-alt-ru.sh
 
 
 ## (optionally for debug)
 docker run --rm -it -v ./data:/app -w /app --name PrusaSlicer.AppImage ghcr.io/pkgforge-dev/archlinux:latest bash
 ```
+
+Package location after successful build `~/Downloads/PrusaSlicer.AppImage/data/dist/PrusaSlicer-<VERSION>-anylinux-x86_64.AppImage`
 
 ---
 
