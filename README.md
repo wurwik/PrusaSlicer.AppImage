@@ -13,11 +13,19 @@ git clone \
   chmod +x ./data/build-prusa-slicer-appimage-alt-ru.sh
 
 ## Run PrusaSlicer.AppImage build in container
-docker run --rm -it -v ./data:/app -w /app --name PrusaSlicer.AppImage ghcr.io/pkgforge-dev/archlinux:latest ./build-prusa-slicer-appimage-alt-ru.sh
-
+docker run --rm -it \
+    -v ./data:/app \
+    -w /app \
+    --name PrusaSlicer.AppImage \
+    ghcr.io/pkgforge-dev/archlinux:latest \
+    ./build-prusa-slicer-appimage-alt-ru.sh
 
 ## (optionally for debug)
-docker run --rm -it -v ./data:/app -w /app --name PrusaSlicer.AppImage ghcr.io/pkgforge-dev/archlinux:latest bash
+docker run --rm -it \
+    -v ./data:/app \
+    -w /app \
+    --name PrusaSlicer.AppImage \
+    ghcr.io/pkgforge-dev/archlinux:latest bash
 ```
 
 Package location after successful build `~/Downloads/PrusaSlicer.AppImage/data/dist/PrusaSlicer-<VERSION>-anylinux-x86_64.AppImage`
