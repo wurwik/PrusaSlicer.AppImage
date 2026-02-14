@@ -1,9 +1,16 @@
-# PrusaSlicer-AppImage 🐧
+# PrusaSlicer-AppImage local-docker-build 🐧
 
-[![GitHub Downloads](https://img.shields.io/github/downloads/sarrchri/PrusaSlicer.AppImage/total?logo=github&label=GitHub%20Downloads)](https://github.com/sarrchri/PrusaSlicer.AppImage/releases/latest)
-[![CI Build Status](https://github.com/sarrchri/PrusaSlicer.AppImage/actions/workflows/appimage.yml/badge.svg)](https://github.com/sarrchri/PrusaSlicer.AppImage/releases/latest)
+Local PrusaSlicer-AppImage build in docker container, `uk` translation replaced with alternative ru translation from Dmitry Sorkin [LINK](https://k3d.tech/projects/ps_translation)
 
-* [Latest Release](https://github.com/sarrchri/PrusaSlicer.AppImage/releases/latest)
+```bash
+git clone \
+  --single-branch \
+  --branch local-docker-build \
+  https://github.com/wurwik/PrusaSlicer.AppImage.git ~/Downloads && \
+  cd ~/Downloads/PrusaSlicer.AppImage/ && \
+  mkdir ./data
+docker run --rm -it -v ./data:/app -w /app --name PrusaSlicer.AppImage ghcr.io/pkgforge-dev/archlinux:latest build-prusa-slicer-appimage-alt-ru.sh
+```
 
 ---
 
