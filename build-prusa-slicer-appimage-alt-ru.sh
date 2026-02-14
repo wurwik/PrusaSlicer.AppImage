@@ -8,17 +8,17 @@ ARCH=$(uname -m)
 DEBLOATED="https://raw.githubusercontent.com/pkgforge-dev/Anylinux-AppImages/refs/heads/main/useful-tools/get-debloated-pkgs.sh"
 SHARUN="https://raw.githubusercontent.com/pkgforge-dev/Anylinux-AppImages/refs/heads/main/useful-tools/quick-sharun.sh"
 
-wget "$DEBLOATED" -O ./get-debloated-pkgs
-wget "$SHARUN" -O ./quick-sharun
-
-chmod +x ./get-debloated-pkgs
-chmod +x ./quick-sharun
-
 ## Install dependencies
 
 echo "Installing package dependencies..."
 echo "---------------------------------------------------------------"
 pacman -Syu --noconfirm prusa-slicer nss-mdns base-devel wget xorg-server-xvfb zsync pipewire-jack
+
+wget "$DEBLOATED" -O ./get-debloated-pkgs
+wget "$SHARUN" -O ./quick-sharun
+
+chmod +x ./get-debloated-pkgs
+chmod +x ./quick-sharun
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
